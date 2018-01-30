@@ -8,12 +8,12 @@ public class EnemyController : MonoBehaviour {
     private Vector3 PlayerPos;
     // Use this for initialization
     void Start () {
-		
-	}
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
         PlayerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);//set the postion to go to
-        transform.position = Vector3.Lerp(transform.position, PlayerPos, moveSpeed * Time.deltaTime);//move towards target pos at the interval
+        transform.position = Vector3.Lerp(transform.position, PlayerPos, moveSpeed * Time.deltaTime);
     }
 }
